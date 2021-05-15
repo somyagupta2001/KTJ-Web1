@@ -1,0 +1,392 @@
+/* color scheme:
+    deepest-purle: #0C0032
+    dark-blue: #190061
+    medium-purple: #240090
+    light-blue: #3500D3
+    light-purple: #a40fdf
+    grey: #282828
+    white: #ffffff
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Atomic Age', cursive;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: white;
+    background-color: #282828;
+}
+
+#nav-bar{
+    height: 10vh;   
+    width: 100%;           
+    background-color: #190061;
+    position:fixed;
+    
+    z-index: 1;
+}
+
+
+.logo-img{
+    height: 11vh;
+    float:left;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+
+.nav-links a{
+    text-decoration: none;
+    display: inline-block;
+    height: 10vh;
+    padding: 1.5rem;
+    color: #5831ce;
+}
+
+.nav-links a:hover{
+    color: #a40fdf;
+    animation: moveInTop 0.4s ease-out;
+    font-weight: 600;
+    border: #a40fdf solid;
+}
+
+
+@keyframes moveInTop{
+    0% { 
+        opacity:0;
+        transform: translateY(-1rem);
+        
+    }
+
+    100% {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0% { 
+        opacity:0;
+        transform: translateY(1rem);
+        
+    }
+
+    100% {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.clear{
+    clear: both;
+}
+.content{
+    position:absolute;
+    top: 10vh;
+    left: 0;
+}
+
+#intro-page{
+    
+    display: flex;
+    
+}
+
+.cover{
+    background-image: linear-gradient(to bottom, rgba(12, 0, 50, 0.8), rgba(25, 0, 97,0.8)), 
+    url(images/intro-cover.jpg);
+    padding: 5rem;
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    text-align: center;
+}
+.cover img{
+    animation: moveInBottom 0.4s ease-out 0.3s backwards;
+}
+.cover p{
+    animation: moveInBottom 0.4s ease-out 0.9s backwards;
+}
+.cover h1{
+    animation: moveInBottom 0.4s ease-out 0.6s backwards;
+}
+.btn{
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    padding: 1rem;
+    border-radius: 10rem;
+    background-color: white;
+    color:rgb(12, 0, 50);
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 2rem;
+    animation: moveInBottom 0.4s ease-out 1.2s backwards;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-color: #3784a8;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:-1;
+    transition: all 0.4s;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.cover-img img{
+    height:100vh;
+}
+
+.break{
+    text-align: center;
+    margin-top: 3rem;
+}
+.sec-heading{
+    text-transform: uppercase;
+    color: #2f39c2;
+    margin: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+    display: block;
+}
+.sec-subheading{
+    color: #808080;
+    margin: 1rem;
+    text-align: center;
+}
+#cards-spl{
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Roboto Mono', monospace;
+}
+.dish{
+    background-color: #514a63;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.dish-img{
+    height: 10rem;
+}
+.dish-name{
+    font-family: 'Atomic Age', cursive;
+}
+.order-btn{
+    background-color: #3784a8;
+    padding: 0.5rem;
+    float: right;
+    color: #0C0032;
+    text-decoration: none;
+    position: relative;
+}
+.order-btn:focus::after{
+    content: "Added";
+    display: inline-block;
+    padding: 0.5rem;
+    color: #170550;
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.tag{
+    height: 2rem;
+    float: right;
+}
+
+#cards-rec{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#searchbox{
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(81, 74, 99, 0.5);
+}
+#searchbox input{
+    display: inline-block;
+    height: 2rem;
+    width: 80%;
+    background-image: url("images/search\ button.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-color: #282828;
+    border:solid gray 0.1rem;
+}
+#searchbox input:hover{
+    border: inset rgb(109, 109, 109)  0.2rem;
+}
+#searchbox input:focus{
+    background-color: gray;
+    height: 2.5rem;
+}
+
+#searchbox input:focus::placeholder{
+    color: #282828;
+}
+
+#reviews{
+    display: flex;
+    flex-direction: row;
+}
+#cards-rev{
+    display: flex;
+    font-family: 'Roboto Mono', monospace;
+}
+.review-card{
+    display: flex;
+    background-color: #514a63;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.review-card:first-child{
+    margin-top: 0;
+}
+.review-card:last-child{
+    margin-bottom: 0;
+}
+
+
+.profile img{
+    width: 15rem;
+    height: auto;
+}
+.comment{
+    font-family: 'Roboto Mono', monospace;
+    padding: 3rem;
+}
+
+.rev-form{
+    background-color: #5465c9;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: relative;
+}
+.info input{
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.rev-form textarea{
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.sub-btn{
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    border-radius: 0.5rem;
+    transform: translateX(-50%);
+    border: white solid;
+    background-color: #5465c9;
+    color:white;
+}
+.sub-btn:hover{
+    border: #5465c9 solid;
+    background-color: white;
+    color: #5465c9;
+}
+
+#footer{
+    margin-top: 2rem;
+}
+
+.follow{
+    padding: 2rem;
+    background-color: #0C0032;
+}
+.follow img{
+    height: 3rem;
+    margin: 1rem;
+}
+.follow img:hover{
+    height: 3.5rem;
+}
+.terms{
+    background-color: #0C0032;
+}
+.terms a{
+    text-decoration: none;
+    color: #6b0892;
+    padding: 2rem;
+}
+.terms a:hover{
+    color: #b715f7;
+}
+.backtotop{
+    background-color: #0C0032;
+    text-align: right;
+    padding: 2rem;
+}
+.backtotop a{
+    text-decoration: none;
+    color: #3500D3;
+}
+.backtotop a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 710px){
+    .nav-bar{
+        font-size: 80%;
+    }
+    #intro-page{
+        flex-direction: column;
+    }
+    .cover-img img{
+        width: 100%;
+        height: auto;
+    }
+    #cards-spl{
+        flex-direction: column;
+    }
+    #cards-rev{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 935px){
+    #cards-spl{
+        flex-direction: column;
+    }
+}
